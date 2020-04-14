@@ -1,0 +1,2 @@
+rootProject.name='Azcar'
+include ':app'

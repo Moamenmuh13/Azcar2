@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="aboBakr">أبو بكر الشاطري</string>
+    <string name="ahmedElhozefe">أحمد الحذيفي</string>
+    <string name="AhmedElhoawshe">أحمد الحواشي</string>
+    <string name="ahmedSaber">أحمد صابر</string>
+    <string name="sora114Number">114 سورة </string>
+    <string name="rewaya">  )حفص عن عاصم(</string>
+    <string name="sora65Number">65 سورة </string>
+    <string name="AlQuraan">القرآن الكريم (صوت)</string>
+
+
+    <string name="elFateha">سورة الفاتحة</string>
+    <string name="elBaqra">سورة البقرة</string>
+    <string name="elnesaa">سورة النساء</string>
+    <string name="alaaraf">سورة الاعراف</string>
+
+    <string name="aya7">7 اية</string>
+    <string name="aya286">286 اية</string>
+    <string name="aya176">176 اية</string>
+    <string name="aya165">165 اية</string>
+</resources>

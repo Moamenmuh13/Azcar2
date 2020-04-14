@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Azcar</string>
+
+    <string name="link">https://web.whatsapp.com</string>
+    <string name="loading">Loading....</string>
+    <string name="noConnection">No Connection</string>
+</resources>
