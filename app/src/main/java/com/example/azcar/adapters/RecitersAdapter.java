@@ -50,10 +50,8 @@ public class RecitersAdapter extends RecyclerView.Adapter<RecitersAdapter.MyView
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder myViewHolder, final int i) {
-
-
-
         final Reciters reciters = arrayList.get(i);
+
         myViewHolder.recitersName.setText(reciters.getReciters());
         final String player = myViewHolder.recitersName.getText().toString();
         myViewHolder.soraNum.setText(reciters.getSoraCount() + " سورة");
@@ -65,6 +63,7 @@ public class RecitersAdapter extends RecyclerView.Adapter<RecitersAdapter.MyView
             public void onClick(View v) {
                 Intent i = new Intent(activity, QuraanActivity.class);
                 i.putExtra("player", player);
+                i.putExtra("reciter",reciters);
                 activity.startActivity(i);
             }
         });

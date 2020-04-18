@@ -12,6 +12,7 @@ import com.example.azcar.R;
 import com.example.azcar.adapters.QuraanAdapter;
 import com.example.azcar.model.Quraan;
 import com.example.azcar.model.Reciters;
+import com.example.azcar.utils.Helper;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -43,8 +44,9 @@ public class QuraanActivity extends AppCompatActivity {
         setContentView(R.layout.activity_quraan);
         ButterKnife.bind(this);
 
-
         String reciters = getIntent().getExtras().getString("player");
+        Reciters reciter = getIntent().getExtras().getParcelable("reciter");
+
         getSupportActionBar().setTitle(reciters);
 
 //        map = new HashMap<>( );
@@ -56,12 +58,15 @@ public class QuraanActivity extends AppCompatActivity {
 //        Log.d("MUUU", "onCreate: " + sura );
 
 //        setData();
-        getData();
+        //Log.d("Test", reciter.getSuras());
+        assert reciter != null;
+        int [] suars = Helper.getSurasId(reciter.getSuras());
+        getData(suars);
 
     }
 
 
-    private void getData() {
+    private void getData(int[] suars) {
 
 
         ArrayList<Quraan> arrayList = new ArrayList<>();
@@ -72,10 +77,16 @@ public class QuraanActivity extends AppCompatActivity {
 
                 JSONObject jsonObject = jsonArray.getJSONObject(i);
                 quraan = new Quraan();
-                quraan.setId(jsonObject.getString("id"));
+                quraan.setId(jsonObject.getInt("id"));
                 quraan.soraName = jsonObject.getString("sn");
                 quraan.soraNum = jsonObject.getString("countaya");
-                arrayList.add(quraan);
+
+                for (int suraId : suars) {
+                    if (quraan.id == suraId) {
+                        arrayList.add(quraan);
+                        break;
+                    }
+                }
 
 //                Log.e("HAHA", "getData: " + quraan.getId());
             }
